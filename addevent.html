@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>welcome frnds</p>
+    <h1 id="hai">hai students</h1>
+    <h1 id="add">hello students</h1>
+    <h1 id="hai">hai students</h1>
+    <h1 id="hai">hai students</h1>
+    <!-- <button id="button">clickme</button>
+    <form id="form">
+    <input id="input" type="text" placeholder="enter the your name"/>
+     <button type="submit">Submit</button></form>
+ -->
+
+     <form id="form">
+  <input 
+    id="password" 
+    type="password" 
+    placeholder="Enter password"
+  >
+  <p id="strength"></p>
+
+  <button type="submit">Submit</button>
+</form>
+
+</body>
+
+
+
+<script>
+// document.body.addEventListener("click",()=>{
+//     console.log("clicked")
+// })
+// const button = document.getElementById("button");
+// button.addEventListener("click",()=>console.log("hello"));
+// button.addEventListener("click",()=>console.log("again"));
+// button.click();
+
+// let input_ele=document.getElementsByTagName("input");
+// input_ele[0].addEventListener("keydown",(e)=>{console.log("key released")});
+
+// input_ele[0].addEventListener("keyup",(a)=>{console.log("key up")});
+
+// let forms=document.getElementById("form");
+// forms.addEventListener("submit",(c)=>{
+//     c.preventDefault();
+//     console.log("form submitted");
+// })
+
+// let count=0;
+// button.addEventListener("click",()=>{
+//     count++;
+// });
+// button.click();
+// button.click();
+// console.log(count);
+
+// let input=document.getElementsByTagName("input");
+// input.addEventListener("input",()=>{
+// console.log(input.value.length);});
+
+// let x = document.querySelector("h1");
+// x.addEventListener("mouseover",()=>{
+//     x.textContent = "Hovered";
+// });
+//  let keyName = "";
+
+//   window.addEventListener("keydown", (event) => {
+//     keyName = event.key;
+//     console.log(keyName); // నొక్కిన key పేరు ఇక్కడ చూపుతుంది
+//   });
+
+//   window.addEventListener("keydown", (event) => {
+//   if (event.key === "Enter") console.log("Enter pressed");
+// });
+
+
+
+
+
+const form = document.getElementById("form");
+  const password = document.getElementById("password");
+  const strengthText = document.getElementById("strength");
+
+ 
+  password.addEventListener("input", () => {
+    const len = password.value.length;
+
+    if (len < 4) {
+      strengthText.textContent = " Weak";
+      strengthText.style.color = "red";
+    } 
+    else if (len >= 4 && len < 8) {
+      strengthText.textContent = " Medium";
+      strengthText.style.color = "orange";
+    } 
+    else {
+      strengthText.textContent = " Strong";
+      strengthText.style.color = "green";
+    }
+  });
+
+
+  form.addEventListener("submit", (e) => {
+    const len = password.value.length;
+
+    if (len < 8) {
+      e.preventDefault();  
+      alert("Password is not strong enough!");
+    }
+  });
+
+
+
+
+</script>
+</html>
